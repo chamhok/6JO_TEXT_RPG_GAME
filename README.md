@@ -1,13 +1,22 @@
-# 흑섬: 닌자의 궤적 — v0.4
+# 흑섬: 닌자의 궤적 — v0.4.1
 
 마우스로 공격 경로를 그린 뒤 버튼을 놓으면 닌자가 그 궤적을 초고속으로 질주하며 적 대군을 베는 2D 닌자 핵앤슬래시 웹게임입니다.
 
 ## 바로 플레이
 
-- **고정 배포판:** https://rawcdn.githack.com/chamhok/6JO_TEXT_RPG_GAME/7e26a33ed5e36f138c60f492a90662caaf0b156a/index.html
+- **v0.4.1 고정 배포판:** https://rawcdn.githack.com/chamhok/6JO_TEXT_RPG_GAME/df2708eb06176838d427a3155a1d43965ca3eda7/index.html
 - **최신 main 빌드:** https://raw.githack.com/chamhok/6JO_TEXT_RPG_GAME/main/index.html
 
-Chrome 또는 Edge 최신 버전을 권장합니다.
+v0.4.1에서는 `DecompressionStream` 의존성을 제거한 호환 로더를 적용했습니다. Chrome·Edge뿐 아니라 gzip 스트림 API가 없던 환경에서도 pako 기반 로더로 게임을 복원합니다.
+
+## v0.4.1 기술 판정 변경
+
+- 기본 꺾인 경로는 연쇄참으로 유지하고 작은 손 떨림은 자동 완화
+- 월영참은 한 방향으로 이어지는 부드러운 원호일 때만 발동
+- 인술 폭발은 실제로 교차한 명확한 X자와 충분한 교차각이 있을 때만 발동
+- 그림자 봉인은 시작점과 끝점이 닫히고 내부 면적이 있는 원형 경로일 때만 발동
+- 드래그 중 판정 기술과 판정 근거를 실시간 표시
+- 공격 예고선·범위·투사체 진행선을 자르거나 끝부분을 되긋는 반격 유지
 
 ## 현재 빌드
 
@@ -15,7 +24,6 @@ Chrome 또는 Edge 최신 버전을 권장합니다.
 - 목표·점선 예시 검로·실시간 판정이 있는 8단계 전투 튜토리얼
 - 체력·호흡·잔영 무한, 표적 자동 재생 자유 연습장
 - 발도참, 연쇄참, 월영참, 그림자 봉인, 인술 폭발, 반격
-- 공격 예고선·범위·투사체 진행선을 자르는 완화된 반격 판정
 - 방패, 다층 갑옷, 투사체 반사, 폭탄 연쇄, 대군 일섬
 
 ## 튜토리얼 순서
@@ -43,4 +51,4 @@ Chrome 또는 Edge 최신 버전을 권장합니다.
 - `Esc`: 취소 또는 일시정지
 - `M`: 음소거
 
-배포판은 `index.html`, `boot.js`, `chunks/c0.js`~`c5.js`로 구성됩니다. 캐릭터 스프라이트는 Ninja Adventure Asset Pack의 CC0 에셋을 사용합니다.
+캐릭터 스프라이트는 Ninja Adventure Asset Pack의 CC0 에셋을 사용합니다.
